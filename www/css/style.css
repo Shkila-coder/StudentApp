@@ -1,0 +1,111 @@
+/* Основной фон страницы */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Светло-серый фон */
+}
+
+/* Статичная синяя лента */
+#header {
+    background-color: #007bff; /* Синий цвет для верхней полосы */
+    color: white;
+    padding: 10px;
+    text-align: left;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Адаптивная ширина */
+    z-index: 1000;
+    box-sizing: border-box; /* Учитывать padding в ширине */
+    font-family: Arial, sans-serif; /* Шрифт */
+}
+
+
+
+#menu-btn {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.title {
+    margin-left: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Светло-голубое боковое меню */
+.side-menu {
+    height: calc(100% - 60px); /* Высота до синей полоски */
+    width: 45%; /* Длина бокового меню сокращена на 20% */
+    position: fixed;
+    z-index: 1001;
+    top: 60px; /* Учитывает высоту синей полоски */
+    left: -45%; /* Изначально скрыто за пределами экрана */
+    background-color: #e6f7ff; /* Светло-голубой фон */
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 10px; /* Отступ сверху для внутреннего контента */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Легкая тень для визуального отделения */
+}
+
+.side-menu a {
+    padding: 10px 8px 10px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #111; /* Тёмный цвет текста */
+    display: block;
+    transition: 0.3s;
+    border-bottom: 2px solid #ccc; /* Линии между ссылками */
+}
+
+.side-menu a:hover {
+    color: #007bff; /* Синий цвет при наведении */
+}
+
+/* Основной контент */
+#main-content {
+    margin-top: 60px; /* Отступ под фиксированную ленту */
+    height: calc(100vh - 60px); /* Высота контента равная оставшемуся экрану */
+    padding: 20px;
+    box-sizing: border-box; /* Чтобы padding учитывался при высоте */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #f5f5f5; /* Светло-серый фон для контента */
+}
+
+/* Настройки кнопок */
+.settings-btn {
+    background-color: #007bff; /* Цвет кнопок как у синей полосы */
+    color: white; /* Цвет текста белый */
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold; /* Жирный шрифт для текста */
+    border-radius: 0%; /* Закругленные углы 15% */
+    width: 66.66vw; /* Ширина кнопок в 2 раза больше (2/3 экрана) */
+    height: 60px; /* Высота кнопки как у синей полосы */
+    margin: 10px auto; /* Центрирование кнопок и отступы */
+    font-family: Arial, sans-serif; /* Шрифт как у синей полосы */
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    transition: background-color 0.2s ease; /* Плавный переход цвета */
+}
+
+.settings-btn:active {
+    background-color: #004085; /* Кнопка становится тёмной при нажатии */
+}
+
+/* Кнопка остается тёмной после нажатия */
+.settings-btn.active {
+    background-color: #004085; /* Кнопка остаётся тёмной */
+}
