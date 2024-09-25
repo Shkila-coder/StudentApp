@@ -1,0 +1,28 @@
+/* Светло-голубое боковое меню */
+.side-menu {
+    height: calc(100% - 60px); /* Высота до синей полоски */
+    width: 45%; /* Длина бокового меню сокращена на 20% */
+    position: fixed;
+    z-index: 1001;
+    top: 60px; /* Учитывает высоту синей полоски */
+    left: -45%; /* Изначально скрыто за пределами экрана */
+    background-color: #e6f7ff; /* Светло-голубой фон */
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 10px; /* Отступ сверху для внутреннего контента */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Легкая тень для визуального отделения */
+}
+
+.side-menu a {
+    padding: 10px 8px 10px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #111; /* Тёмный цвет текста */
+    display: block;
+    transition: 0.3s;
+    border-bottom: 2px solid #ccc; /* Линии между ссылками */
+}
+
+.side-menu a:hover {
+    color: #007bff; /* Синий цвет при наведении */
+}

@@ -1,0 +1,29 @@
+/* Статичная синяя лента */
+#header {
+    background-color: #007bff; /* Синий цвет для верхней полосы */
+    color: white;
+    padding: 10px;
+    text-align: left;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Адаптивная ширина */
+    z-index: 1000;
+    box-sizing: border-box; /* Учитывать padding в ширине */
+    font-family: Arial, sans-serif; /* Шрифт */
+}
+
+#menu-btn {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.title {
+    margin-left: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}

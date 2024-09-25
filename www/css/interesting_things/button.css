@@ -1,0 +1,27 @@
+/* Настройки кнопок */
+.settings-btn {
+    background-color: #007bff; /* Цвет кнопок как у синей полосы */
+    color: white; /* Цвет текста белый */
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold; /* Жирный шрифт для текста */
+    border-radius: 0%; /* Закругленные углы 15% */
+    width: 66.66vw; /* Ширина кнопок в 2 раза больше (2/3 экрана) */
+    height: 60px; /* Высота кнопки как у синей полосы */
+    margin: 10px auto; /* Центрирование кнопок и отступы */
+    font-family: Arial, sans-serif; /* Шрифт как у синей полосы */
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    transition: background-color 0.2s ease; /* Плавный переход цвета */
+}
+
+.settings-btn:active {
+    background-color: #004085; /* Кнопка становится тёмной при нажатии */
+}
+
+/* Кнопка остается тёмной после нажатия */
+.settings-btn.active {
+    background-color: #004085; /* Кнопка остаётся тёмной */
+}
