@@ -1,11 +1,9 @@
 // Функция для загрузки домашнего контента
 function loadHome() {
-    document.getElementById('main-content').innerHTML = `
-        <h1>Welcome to the app</h1>
-        <p>This is your content.</p>
-    `;
+    document.getElementById('main-content').style.display = 'block';
+    document.getElementById('profile').style.display = 'none';
     updateTitle('Home'); // Обновляем заголовок
-    toggleMenu(); // Закрыть меню после выбора
+    toggleMenu();
 }
 
 // Функция для загрузки страницы настроек
@@ -17,6 +15,14 @@ function loadSettings() {
     `;
     updateTitle('Settings'); // Обновляем заголовок
     toggleMenu(); // Закрыть меню после выбора
+}
+
+// Функция для загрузки страницы профиля
+function loadProfile() {
+    document.getElementById('main-content').style.display = 'none';
+    document.getElementById('profile').style.display = 'block';
+    updateTitle('Profile'); // Обновляем заголовок
+    toggleMenu();
 }
 
 // Функция для применения класса active
