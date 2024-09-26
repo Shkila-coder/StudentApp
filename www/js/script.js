@@ -3,7 +3,7 @@ let isMenuOpen = false;
 function toggleMenu() {
     const sideMenu = document.getElementById("side-menu");
     if (isMenuOpen) {
-        sideMenu.style.left = "-80%";
+        sideMenu.style.left = "-45%";
     } else {
         sideMenu.style.left = "0";
     }
