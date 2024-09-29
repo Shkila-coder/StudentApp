@@ -1,6 +1,7 @@
 // Функция для загрузки домашнего контента
 function loadHome() {
     document.getElementById('main-content').style.display = 'block';
+    document.getElementById('settings').style.display = 'none';
     document.getElementById('profile').style.display = 'none';
     updateTitle('Home'); // Обновляем заголовок
     toggleMenu();
@@ -8,11 +9,9 @@ function loadHome() {
 
 // Функция для загрузки страницы настроек
 function loadSettings() {
-    document.getElementById('main-content').innerHTML = `
-        <button class="settings-btn" onclick="makeActive(this)">Change Theme</button>
-        <button class="settings-btn" onclick="makeActive(this)">Change Language</button>
-        <button class="settings-btn" onclick="makeActive(this)">About</button>
-    `;
+    document.getElementById('main-content').style.display = 'none';
+    document.getElementById('settings').style.display = 'block';
+    document.getElementById('profile').style.display = 'none';
     updateTitle('Settings'); // Обновляем заголовок
     toggleMenu(); // Закрыть меню после выбора
 }
@@ -20,6 +19,7 @@ function loadSettings() {
 // Функция для загрузки страницы профиля
 function loadProfile() {
     document.getElementById('main-content').style.display = 'none';
+    document.getElementById('settings').style.display = 'none';
     document.getElementById('profile').style.display = 'block';
     updateTitle('Profile'); // Обновляем заголовок
     toggleMenu();
