@@ -1,11 +1,11 @@
 // Открытие модального окна
-function loadChangeTheme() {
-    document.getElementById("myModal").style.display = "block";
+function openThemeModal() {
+    document.getElementById("themeModal").style.display = "block";
 }
 
 // Закрытие модального окна
-function closeModal() {
-    document.getElementById("myModal").style.display = "none";
+function closeThemeModal() {
+    document.getElementById("themeModal").style.display = "none";
 }
 
 // Установка темы (функции для изменения темы можно доработать)
@@ -16,7 +16,7 @@ function setTheme(theme) {
 
 // Закрытие модального окна при клике вне его
 window.onclick = function(event) {
-    let modal = document.getElementById("myModal");
+    let modal = document.getElementById("themeModal");
     if (event.target === modal) {
         closeModal();
     }
