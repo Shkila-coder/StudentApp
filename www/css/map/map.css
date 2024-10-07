@@ -1,0 +1,7 @@
+#map {
+    width: calc(100% - 40px); /* Отступ 20px с каждой стороны */
+    height: 400px; /* Высота карты */
+    margin: 20px auto; /* Отступ 20px сверху и снизу */
+    border-radius: 15px; /* Закругленные углы */
+    border: 3px solid black; /* Контур 3px */
+}

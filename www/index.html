@@ -12,8 +12,10 @@
     <link rel="stylesheet" href="css/interesting_things/themeButton.css">
     <link rel="stylesheet" href="css/interesting_things/languageButton.css">
     <link rel="stylesheet" href="css/interesting_things/aboutButton.css">
+    <link rel="stylesheet" href="css/map/map.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Подключение FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
 </head>
 <body>
 <div id="header">
@@ -24,13 +26,12 @@
 <div id="side-menu" class="side-menu">
     <a href="#" onclick="loadHome()">Home</a>
     <a href="#" onclick="loadSettings()">Settings</a> <!-- Настройки -->
-    <a href="#" onclick="loadProfile()"> Profile</a>
-    <a href="#">Link 3</a>
+    <a href="#" onclick="loadProfile()">Profile</a>
+    <a href="#">Games</a>
 </div>
 
 <div id="main-content">
-    <h1>Welcome to the app</h1>
-    <p>This is your content.</p>
+    <div id="map"></div> <!-- Контейнер для карты -->
 </div>
 
 <div id="settings">
@@ -128,5 +129,6 @@
 <script src="js/theme.js"></script>
 <script src="js/language.js"></script>
 <script src="js/about.js"></script>
+
 </body>
 </html>
