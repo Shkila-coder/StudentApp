@@ -19,26 +19,22 @@ function updateTitle(subtitle) {
 function initializeMap() {
     // Ожидание загрузки API Яндекс.Карт
     ymaps.ready(function () {
-        // Создание карты в контейнере #map
+        // Создание карты в контейнере #map с использованием глобальной переменной координат
         var map = new ymaps.Map("map", {
-            center: [55.751244, 37.618423], // Координаты центра (например, Москва)
+            center: MAP_CENTER_COORDINATES, // Используем глобальные координаты
             zoom: 10
         });
 
         // Определение местоположения пользователя
         if (navigator.geolocation) {
             // Пытаемся получить местоположение
-            navigator.geolocation.getCurrentPosition(
-                function (position) {
-                    onMapSuccess(position, map);
-                },
-                onMapError
-            );
+            navigator.geolocation.getCurrentPosition(onMapSuccess, onMapError);
         } else {
             alert("Геолокация не поддерживается вашим устройством");
         }
     });
 }
+
 
 // Функция успешного получения местоположения
 function onMapSuccess(position, map) {
