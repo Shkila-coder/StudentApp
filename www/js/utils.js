@@ -16,38 +16,63 @@ function updateTitle(subtitle) {
     titleElement.innerHTML = `My App <i class="fas fa-arrow-right"></i> ${subtitle}`;
 }
 
-// Функция инициализации карты
 function initializeMap() {
-    // Проверяем, поддерживается ли геолокация
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(onMapSuccess, onMapError);
-    } else {
-        console.error("Геолокация не поддерживается вашим браузером.");
-    }
-}
+    // Ожидание загрузки API Яндекс.Карт
+    ymaps.ready(function () {
+        // Создание карты в контейнере #map
+        var map = new ymaps.Map("map", {
+            center: [55.751244, 37.618423], // Координаты центра (например, Москва)
+            zoom: 10
+        });
 
-// Функция для успешного получения геолокации
-function onMapSuccess(position) {
-    const latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-    const mapOptions = {
-        center: latLng,
-        zoom: 15,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-
-    const map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
-    const marker = new google.maps.Marker({
-        position: latLng,
-        map: map,
-        title: "Вы здесь!"
+        // Определение местоположения пользователя
+        if (navigator.geolocation) {
+            // Пытаемся получить местоположение
+            navigator.geolocation.getCurrentPosition(
+                function (position) {
+                    onMapSuccess(position, map);
+                },
+                onMapError
+            );
+        } else {
+            alert("Геолокация не поддерживается вашим устройством");
+        }
     });
 }
 
-// Функция для обработки ошибок при получении геолокации
-function onMapError(error) {
-    console.error("Ошибка геолокации: " + error.message);
+// Функция успешного получения местоположения
+function onMapSuccess(position, map) {
+    var userCoordinates = [position.coords.latitude, position.coords.longitude];
+
+    // Центрирование карты на местоположении пользователя
+    map.setCenter(userCoordinates);
+
+    // Добавление метки местоположения
+    var placemark = new ymaps.Placemark(userCoordinates, {
+        hintContent: 'Ваше местоположение',
+        balloonContent: 'Вы здесь'
+    });
+
+    map.geoObjects.add(placemark);
 }
+
+// Функция обработки ошибок
+function onMapError(error) {
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            alert("Пользователь отклонил запрос на геолокацию.");
+            break;
+        case error.POSITION_UNAVAILABLE:
+            alert("Информация о местоположении недоступна.");
+            break;
+        case error.TIMEOUT:
+            alert("Превышено время ожидания запроса на геолокацию.");
+            break;
+        case error.UNKNOWN_ERROR:
+            alert("Произошла неизвестная ошибка.");
+            break;
+    }
+}
+
 
 
