@@ -1,0 +1,36 @@
+/* Стили для кнопок социальных сетей */
+/* Удалить подчеркивание и убрать любые стили псевдоэлементов */
+.social-buttons a {
+    text-decoration: none; /* Убирает подчеркивание */
+    display: inline-block; /* Убирает подчеркивание для элементов внутри */
+    margin: 0 10px; /* Отступы между иконками */
+    border: none; /* Убираем любые границы */
+    outline: none; /* Убираем контуры */
+}
+
+/* Убедиться, что псевдоэлементы :before и :after не влияют */
+.social-buttons a::before,
+.social-buttons a::after {
+    content: none; /* Убираем любые псевдоэлементы */
+}
+
+/* Дополнительно стилизуем иконки */
+.social-buttons i {
+    font-size: 40px;
+    display: inline-block; /* Убирает блочный режим для иконок */
+    border: none; /* Убираем любые границы */
+    outline: none; /* Убираем контуры */
+}
+
+
+.social-buttons .github {
+    color: #333;
+}
+
+.social-buttons .telegram {
+    color: #0088cc;
+}
+
+.social-buttons .discord {
+    color: #7289da;
+}
